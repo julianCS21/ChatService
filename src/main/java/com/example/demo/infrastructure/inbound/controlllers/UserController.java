@@ -33,7 +33,6 @@ public class UserController {
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody User newUser) throws UserException {
         try {
-            System.out.println(newUser.toString());
             return new ResponseEntity<>(this.userService.createUser(newUser), HttpStatus.CREATED);
         } catch (UserException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);

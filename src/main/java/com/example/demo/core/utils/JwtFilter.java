@@ -1,4 +1,4 @@
-package com.example.demo.core;
+package com.example.demo.core.utils;
 
 import com.example.demo.application.UserSecurityService;
 import com.example.demo.domain.models.User;

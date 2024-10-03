@@ -1,7 +1,7 @@
-package com.example.demo.core;
+package com.example.demo.core.config;
 
+import com.example.demo.core.utils.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

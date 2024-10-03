@@ -1,4 +1,4 @@
-package com.example.demo.core;
+package com.example.demo.core.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,5 +18,12 @@ public class ValuesConfig {
     @Value("${jwt.author}")
     private String author;
 
+    @Value("${aes.secret}")
+    private String aesSecret;
 
+    @Value("${aes.algorithm}")
+    private String aesAlgorithm;
+
+    @Value("${aes.transformation}")
+    private String aesTransformation;
 }

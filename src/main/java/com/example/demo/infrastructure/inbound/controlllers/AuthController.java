@@ -1,6 +1,6 @@
 package com.example.demo.infrastructure.inbound.controlllers;
 
-import com.example.demo.core.JwtUtil;
+import com.example.demo.core.utils.JwtUtil;
 import com.example.demo.domain.DTO.loginDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

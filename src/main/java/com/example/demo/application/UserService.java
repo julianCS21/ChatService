@@ -28,7 +28,6 @@ public class UserService {
     public User createUser(User newUser) throws UserException {
         try{
             String encodedPassword = this.passwordEncoder.encode(newUser.getPassword());
-            System.out.println(encodedPassword);
             newUser.setPassword(encodedPassword);
             return this.userRepository.save(newUser);
         } catch (RuntimeException e){

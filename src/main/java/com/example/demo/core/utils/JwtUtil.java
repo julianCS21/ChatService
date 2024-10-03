@@ -1,13 +1,15 @@
-package com.example.demo.core;
+package com.example.demo.core.utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.example.demo.core.ValuesConfig;
+import com.example.demo.core.config.ValuesConfig;
+import com.example.demo.domain.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -48,5 +50,12 @@ public class JwtUtil {
                 .build()
                 .verify(jwt)
                 .getSubject();
+    }
+
+    public String getAuthenticatedUserFromJwt(String jwt) {
+        if (isValid(jwt)) {
+            return getEmail(jwt);
+        }
+        return null;
     }
 }
