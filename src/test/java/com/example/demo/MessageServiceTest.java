@@ -43,8 +43,8 @@ public class MessageServiceTest {
         recipient = new User();
         recipient.setId(2L);
 
-        // Configuración del mock de ValuesConfig
-        when(valuesConfig.getAesSecret()).thenReturn("1234567890123456"); // Clave de 16 bytes para AES-128
+
+        when(valuesConfig.getAesSecret()).thenReturn("1234567890123456");
         when(valuesConfig.getAesAlgorithm()).thenReturn("AES");
         when(valuesConfig.getAesTransformation()).thenReturn("AES/ECB/PKCS5Padding");
     }
@@ -52,12 +52,11 @@ public class MessageServiceTest {
     @Test
     public void testCreateMessage() throws Exception {
         String content = "Hello, World!";
-        String encryptedContent = "s1aiR0qHAayxg11CyTDX1Q=="; // Aquí deberías utilizar el método de cifrado real para generar este valor
-
+        String encryptedContent = "s1aiR0qHAayxg11CyTDX1Q==";
 
         when(messageRepository.save(any(Message.class))).thenAnswer(invocation -> {
             Message message = invocation.getArgument(0);
-            message.setContent(encryptedContent); // Establecer contenido cifrado
+            message.setContent(encryptedContent);
             return message;
         });
 
@@ -73,16 +72,15 @@ public class MessageServiceTest {
 
     @Test
     public void testDecryptMessage() throws Exception {
-        String encryptedContent = "s1aiR0qHAayxg11CyTDX1Q=="; // Simula contenido cifrado
-
+        String encryptedContent = "s1aiR0qHAayxg11CyTDX1Q==";
         Message message = new Message();
         message.setContent(encryptedContent);
 
-        // Llama al método de descifrado real
+
         String decryptedContent = messageService.receiveMessage(message);
 
-        // Aquí puedes verificar que el contenido descifrado sea el esperado
-        assertEquals("Hello, World!", decryptedContent); // Asegúrate de que este valor sea el esperado
+
+        assertEquals("Hello, World!", decryptedContent);
     }
 
 }
