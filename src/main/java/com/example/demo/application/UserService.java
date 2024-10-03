@@ -9,36 +9,29 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
-
-
-    public UserService(UserRepository userRepository){
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-
+        this.passwordEncoder = passwordEncoder; // Inyección de PasswordEncoder
     }
 
     public User createUser(User newUser) throws UserException {
-        try{
+        try {
             String encodedPassword = this.passwordEncoder.encode(newUser.getPassword());
             newUser.setPassword(encodedPassword);
             return this.userRepository.save(newUser);
-        } catch (RuntimeException e){
+        } catch (RuntimeException e) {
             throw new UserException(e.getMessage());
         }
-
     }
 
-
-
-    public List<User> getUsers(){
+    public List<User> getUsers() {
         return this.userRepository.findAll();
     }
 }

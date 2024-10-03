@@ -26,6 +26,7 @@ public class MessageService {
     private SimpMessagingTemplate messagingTemplate;
 
     public Message createMessage(User sender, User recipient, String content) throws Exception {
+
         String secretKey = valuesConfig.getAesSecret();
         String encryptedContent = encryptMessage(content, secretKey);
 
@@ -34,6 +35,8 @@ public class MessageService {
         message.setSender(sender.getId());
         message.setRecipient(recipient.getId());
         message.setSentAt(LocalDateTime.now());
+
+        System.out.println("dsadsd");
 
         messageRepository.save(message);
 

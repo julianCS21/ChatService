@@ -56,6 +56,8 @@ public class MessageController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Recipient doesn't exist");
         }
 
+
+
         Message newMessage = messageService.createMessage(sender.get(), recipient.get(), messageDTO.getContent());
 
         return ResponseEntity.ok("Message sent successfully");
