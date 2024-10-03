@@ -11,7 +11,7 @@ clone el repositorio
 
 ---
 
-    git clone https://github.com/julianCS21/AREPParcial02.git
+    git clone https://github.com/julianCS21/ChatService.git
 
 ---
 
