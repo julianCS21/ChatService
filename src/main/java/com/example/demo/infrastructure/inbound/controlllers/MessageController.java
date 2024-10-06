@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/messages")
+@RequestMapping("/api/v1/messages")
 public class MessageController {
 
     @Autowired

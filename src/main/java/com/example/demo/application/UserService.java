@@ -18,7 +18,7 @@ public class UserService {
     @Autowired
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder; // Inyección de PasswordEncoder
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User createUser(User newUser) throws UserException {

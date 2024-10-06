@@ -14,11 +14,4 @@ public class MessageDTO {
     private String recipientJwt;
     private String content;
 
-    public void setRecipientJwt(String recipientJwt) {
-        this.recipientJwt = recipientJwt;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 }
