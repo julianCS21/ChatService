@@ -150,10 +150,6 @@ Devuelve una confirmación de que el mensaje fue enviado exitosamente.
 Es fundamental utilizar el token JWT proporcionado al iniciar sesión para acceder a los endpoints que requieran autenticación. El token debe ser incluido en el encabezado de autorización:
 
 
-Consideraciones
-Es importante gestionar los errores de autenticación, como respuestas no autorizadas (401), cuando el JWT es inválido o ha expirado.
-
-
 
 ## Autor
 
