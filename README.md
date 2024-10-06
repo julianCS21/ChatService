@@ -95,7 +95,15 @@ Respuesta (Response):
 En caso de éxito, devuelve la información del usuario creado.
 
 
-2. Iniciar Sesión (Autenticación)
+2. ver lista de usuarios
+   
+URL : /user
+
+Método : GET
+
+
+
+3. Iniciar Sesión (Autenticación)
 URL: /auth/login
 
 Método: POST
@@ -116,7 +124,7 @@ Respuesta (Response):
 
 En caso de éxito, devuelve un JWT en el header que se usará para autenticación en solicitudes futuras.
 
-3. Enviar Mensaje
+4. Enviar Mensaje
 URL: /messages/send
 
 Método: POST
